@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import <rootless.h>
 
 %hook ClassName
 
@@ -11,6 +12,8 @@
 	%log; // Write a message about this call, including its class, name and arguments, to the system log.
 
 	%orig; // Call through to the original function with its original arguments.
+
+	NSLog(@"var: %@", ROOT_PATH_NS(@"/var/"));
 }
 
 %end
