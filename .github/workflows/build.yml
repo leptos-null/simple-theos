@@ -22,8 +22,8 @@ jobs:
       - name: Switch vendor/lib
         run: |
           cd theos/vendor/lib
-          git fetch origin leptos/libroot-102348f
-          git checkout ddb22e1bfa89886ada39b6feeab51ea4bbe78acc
+          git fetch origin leptos/libroot-oldabi-mac-test
+          git checkout 89b6c45d2c9759eeb81824d8fbd8a41137362fd4
 
       - name: Download Toolchain
         run: |
@@ -52,6 +52,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: libroot_oldabi
+          name: Simple.dylib
           path: simple/.theos/obj/debug/Simple.dylib
           if-no-files-found: error
