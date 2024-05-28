@@ -17,3 +17,8 @@
 }
 
 %end
+
+%ctor {
+    NSLog(@"[Marauder] Brought to you by Luki, Leptos, Lightmann, and Kabir");
+	%init;
+}
