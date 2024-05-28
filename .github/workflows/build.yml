@@ -19,6 +19,12 @@ jobs:
           path: theos
           submodules: recursive
 
+      - name: Switch vendor/lib
+        run: |
+          cd theos/vendor/lib
+          git fetch origin/leptos/libroot-102348f
+          git checkout origin/leptos/libroot-102348f
+
       - name: Download Toolchain
         run: |
           curl -sL https://github.com/kabiroberai/swift-toolchain-linux/releases/download/v2.3.0/swift-5.8-ubuntu20.04.tar.xz \
