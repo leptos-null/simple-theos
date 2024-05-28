@@ -27,7 +27,7 @@ jobs:
 
       - name: Download Toolchain
         run: |
-          curl -sL https://github.com/kabiroberai/swift-toolchain-linux/releases/download/v2.3.0/swift-5.8-ubuntu20.04.tar.xz \
+          curl -sL https://github.com/Luki120/swift-toolchain-linux/releases/download/ea6f675b-21b5-4d68-a803-ff6c222d97d0/swift-5.10-ubuntu22.04.tar.xz \
             -o swift-5.8-ubuntu20.04.tar.xz
 
       - name: Install Toolchain
