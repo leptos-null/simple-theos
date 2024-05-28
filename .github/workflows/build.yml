@@ -28,6 +28,15 @@ jobs:
         run: |
           tar -xf swift-5.8-ubuntu20.04.tar.xz -C theos/toolchain/
 
+      - name: Download SDK
+        run: |
+          curl -sL https://github.com/theos/sdks/releases/download/master-146e41f/iPhoneOS16.5.sdk.tar.xz \
+            -o iPhoneOS16.5.sdk.tar.xz
+
+      - name: Install SDK
+        run: |
+          tar -xf iPhoneOS16.5.sdk.tar.xz -C theos/sdks/
+
       - name: Build
         run: |
           export THEOS="$(pwd)/theos"
