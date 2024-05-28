@@ -22,7 +22,7 @@ jobs:
       - name: Switch vendor/lib
         run: |
           cd theos/vendor/lib
-          git fetch origin/leptos/libroot-102348f
+          git fetch origin leptos/libroot-102348f
           git checkout origin/leptos/libroot-102348f
 
       - name: Download Toolchain
