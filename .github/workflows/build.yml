@@ -23,7 +23,7 @@ jobs:
         run: |
           cd theos/vendor/lib
           git fetch origin leptos/libroot-102348f
-          git checkout origin/leptos/libroot-102348f
+          git checkout ddb22e1bfa89886ada39b6feeab51ea4bbe78acc
 
       - name: Download Toolchain
         run: |
