@@ -14,7 +14,7 @@ jobs:
 
       - name: Install Theos
         run: |
-          bash -c "$(curl -fsSL https://raw.githubusercontent.com/L1ghtmann/theos/swift-tc/bin/install-theos)"
+          bash simple/install-theos
 
       - name: Build
         run: |
