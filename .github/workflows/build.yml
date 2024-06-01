@@ -12,40 +12,12 @@ jobs:
         with:
           path: simple
 
-      - name: Checkout Theos
-        uses: actions/checkout@v4
-        with:
-          repository: theos/theos
-          path: theos
-          submodules: recursive
-
-      - name: Switch vendor/lib
+      - name: Install Theos
         run: |
-          cd theos/vendor/lib
-          git fetch origin leptos/libroot-oldabi-mac-test
-          git checkout 89b6c45d2c9759eeb81824d8fbd8a41137362fd4
-
-      - name: Download Toolchain
-        run: |
-          curl -sL https://github.com/Luki120/swift-toolchain-linux/releases/download/4b7044d75ac77e910cf6/swift-5.10-ubuntu22.04.tar.xz \
-            -o swift-5.10-ubuntu22.04.tar.xz
-
-      - name: Install Toolchain
-        run: |
-          tar -xf swift-5.10-ubuntu22.04.tar.xz -C theos/toolchain/
-
-      - name: Download SDK
-        run: |
-          curl -sL https://github.com/theos/sdks/releases/download/master-146e41f/iPhoneOS16.5.sdk.tar.xz \
-            -o iPhoneOS16.5.sdk.tar.xz
-
-      - name: Install SDK
-        run: |
-          tar -xf iPhoneOS16.5.sdk.tar.xz -C theos/sdks/
+          bash -c "$(curl -fsSL https://raw.githubusercontent.com/L1ghtmann/theos/swift-tc/bin/install-theos)"
 
       - name: Build
         run: |
-          export THEOS="$(pwd)/theos"
           cd simple
           make package THEOS_PACKAGE_SCHEME=rootless
 
