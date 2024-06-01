@@ -18,6 +18,7 @@ jobs:
 
       - name: Build
         run: |
+          export THEOS="${HOME}/theos"
           cd simple
           make package THEOS_PACKAGE_SCHEME=rootless
 
